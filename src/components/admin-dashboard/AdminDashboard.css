@@ -1,0 +1,53 @@
+/* Общие стили */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.MuiAppBar-root {
+    margin-bottom: 20px;
+}
+
+.MuiCard-root {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.MuiCardContent-root {
+    padding: 16px;
+}
+
+.MuiCardActions-root {
+    padding: 8px;
+}
+
+/* Адаптивный дизайн */
+@media (max-width: 768px) {
+    .MuiGrid-item {
+        width: 100%;
+        padding: 8px;
+        /* Добавляем внутренние отступы для улучшения отображения */
+    }
+
+    .MuiCard-root {
+        margin: 10px 0;
+    }
+
+    .MuiButton-root {
+        font-size: 0.9em;
+    }
+
+    .MuiTypography-root {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .MuiTypography-root {
+        font-size: 0.8em;
+    }
+}
+
+.MuiSelect-root {
+    width: 100%;
+}
