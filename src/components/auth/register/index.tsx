@@ -18,7 +18,7 @@ const RegisterPage: React.FC<IPropsRegister> = (props: IPropsRegister): JSX.Elem
 
     const handlePolicyClick = () => {
         // Замени URL на путь к вашему файлу с политикой
-        window.open('src/media/personal-data-processing-policy-TS-Integration.pdf', '_blank');
+        window.open(process.env.PUBLIC_URL + '/personal-data-processing-policy-TS-Integration.pdf', '_blank');
     };
 
     return (
