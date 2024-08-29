@@ -71,7 +71,7 @@ const AuthRootComponent: React.FC = (): JSX.Element => {
                     localStorage.setItem('token', token);
 
                     await dispatch(login(newUser));
-                    navigate('/home');
+                    navigate('/login');
                 } else {
                     setError(AppErrors.PasswordDoNotMatch);
                 }
@@ -115,4 +115,3 @@ const AuthRootComponent: React.FC = (): JSX.Element => {
 };
 
 export default AuthRootComponent;
-

@@ -8,6 +8,7 @@ import IconButton from '@mui/material/IconButton';
 import { useNavigate } from 'react-router-dom';
 import './VirtualCard.css';
 
+
 const VirtualCard: React.FC = () => {
     const [user, setUser] = useState({
         surname: '',
@@ -38,7 +39,7 @@ const VirtualCard: React.FC = () => {
                 setUser(response.data);
                 setIsAdmin(response.data.roles.includes('ROLE_ADMIN'));
                 setIsSuperAdmin(response.data.roles.includes('ROLE_SUPERADMIN'));
-
+        
                 const responseForCard = await axios.get('http://localhost:8080/api/virtualCard/getVirtualCard', {
                     headers: {
                         Authorization: `Bearer ${token}`
@@ -46,7 +47,7 @@ const VirtualCard: React.FC = () => {
                 });
                 const cardData = responseForCard.data;
                 const expiryDate = new Date(cardData.expirationDate);
-
+        
                 setCard({
                     number: cardData.cardNumber,
                     expiryDate: `${expiryDate.getMonth() + 1}/${expiryDate.getFullYear().toString().slice(-2)}`,
@@ -57,6 +58,7 @@ const VirtualCard: React.FC = () => {
                 setLoading(false);
             }
         };
+        
 
         fetchUserData();
     }, []);

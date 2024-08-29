@@ -2,6 +2,8 @@ export interface IPropsLogin {
     setpassword: (value: string) => void;
     setUserName: (value: string) => void;
     handleRegisterClick: () => void;
+
+
 }
 
 export interface IPropsRegister {
@@ -18,7 +20,8 @@ export interface IPropsRegister {
 
 export interface IAuthState {
     user: {} | IPublicUser,
-    isLogged: boolean,
+    isLogged: any,
+    token: any;
 
 }
 
