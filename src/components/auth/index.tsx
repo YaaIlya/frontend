@@ -77,8 +77,11 @@ const AuthRootComponent: React.FC = (): JSX.Element => {
                 }
             }
         } catch (e: any) {
+            if(e = "400"){
+                setError('Заполните все поля');
+            }
             // Обработка ошибок и установка сообщения об ошибке
-            setError('Неверное имя пользователя или пароль.');
+           // setError('Неверное имя пользователя или пароль.');
             console.error(e);
         }
     };
