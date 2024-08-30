@@ -5,8 +5,11 @@ import AuthRootComponent from './components/auth';
 import VirtualCard from './components/home';
 import AdminDashboard from './components/admin-dashboard';
 import SuperAdminDashboard from './components/superadmin-dashboard';
+import axios from "axios";
 
 function App() {
+  console.log('API_SERVER_URL', process.env.REACT_APP_API_SERVER_URL)
+  axios.defaults.baseURL = process.env.REACT_APP_API_SERVER_URL
   return (
     <div className="app">
       <Routes>
