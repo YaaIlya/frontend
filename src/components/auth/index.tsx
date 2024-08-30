@@ -39,7 +39,7 @@ const AuthRootComponent: React.FC = (): JSX.Element => {
         try {
             if (location.pathname === '/login') {
                 // Отправляем запрос на сервер для проверки пользователя
-                const response = await axios.post("http://localhost:8080/api/auth/login", userData);
+                const response = await axios.post("http://localhost:8090/api/auth/login", userData);
                 const user = response.data;
 
                 // Сохранение токена в localStorage
@@ -63,7 +63,7 @@ const AuthRootComponent: React.FC = (): JSX.Element => {
                         birthDate,
                         patronymic
                     };
-                    const response = await axios.post("http://localhost:8080/api/auth/registration", userData);
+                    const response = await axios.post("http://localhost:8090/api/auth/registration", userData);
                     const newUser = response.data;
 
                     // Сохранение токена в localStorage

@@ -8,7 +8,7 @@ const LoginPage: React.FC<IPropsLogin> = (props: IPropsLogin): JSX.Element => {
     return (
         <div >
             <Typography variant="h4" fontFamily='Inter' textAlign='left' marginBottom={3}>Авторизация</Typography>
-            <TextField fullWidth={true} margin='normal' label="UserName" variant="outlined" placeholder='Введите ваш UserName' onChange={(e) => setUserName(e.target.value)} />
+            <TextField fullWidth={true} margin='normal' label="Username" variant="outlined" placeholder='Введите ваш Username' onChange={(e) => setUserName(e.target.value)} />
             <TextField type='password' fullWidth={true} margin='normal' label="Пароль" variant="outlined" placeholder='Введите ваш пароль' onChange={(e) => setpassword(e.target.value)} />
             <Button type="submit" fullWidth={true} variant="contained" sx={{ marginTop: 2, fontFamily: 'Inter' }}>Войти</Button>
             <Typography variant="body1" sx={{ fontFamily: 'Inter', textAlign: 'center', marginTop: 3 }} >У вас нет аккаунта? <span onClick={handleRegisterClick} className='incitingText'>Регистрация</span></Typography>

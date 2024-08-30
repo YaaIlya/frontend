@@ -116,7 +116,6 @@ const SuperAdminDashboard: React.FC = () => {
                                     <CardContent>
                                         <Typography variant="h5">{user.username}</Typography>
                                         <Typography color="textSecondary">Номер карты: {user.cardNumber}</Typography>
-                                        <Typography color="textSecondary">Дата рождения: {new Date(user.dateOfBirth).toLocaleDateString()}</Typography>
                                         <Typography color="textSecondary">Роли: {user.roles.join(', ')}</Typography>
                                     </CardContent>
                                     <CardActions>

@@ -40,7 +40,6 @@ const AdminDashboard: React.FC = () => {
                         return {
                             userId: user.id,
                             username: user.username,
-                            dateOfBirth: user.dateOfBirth ? user.dateOfBirth : 'Не указано',
                             roles: user.roles.map((roleObj: any) => roleObj.role.split('_')[1] || roleObj.role),
                             cardNumber: firstCard ? firstCard.id : 'Нет карты',
                         };
@@ -111,7 +110,6 @@ const AdminDashboard: React.FC = () => {
                                     <CardContent>
                                         <Typography variant="h5">{user.username}</Typography>
                                         <Typography color="textSecondary">Номер карты: {user.cardNumber}</Typography>
-                                        <Typography color="textSecondary">Дата рождения: {new Date(user.dateOfBirth).toLocaleDateString()}</Typography>
                                         <Typography color="textSecondary">Роли: {user.roles.join(', ')}</Typography>
                                     </CardContent>
                                     <CardActions>
