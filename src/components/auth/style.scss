@@ -2,20 +2,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 95;
-    height: 95vh;
-    background-image: url("../../media/Screenshot_4.png");
+    min-height: 100vh;
+    //height: 95vh;
+    //width: 95;
+    background-image: url("../../media/logo.png");
     background-repeat: no-repeat;
-    background-position: 90% 80%;
-    background-size: 200px 150px;
+    background-position: 100% 80%;
+    background-size: 385px 150px;
 
     .incitingText {
         color: rgb(54, 54, 255);
         font-weight: 600;
         cursor: pointer;
     }
-
-
 }
 
 .mainBox {
@@ -37,17 +36,30 @@
     /* Опционально: настройте размер шрифта */
 }
 
+@media (max-width: 1400px) {
+    .root {
+        // Убрираем лого вверх, делаем верхний отступ контейнеру
+        background-position: top center;
+    }
+}
+
 @media (max-width: 600px) {
     .root {
-        background-position: top center;
+        //background-position: top center;
         /* Изменяем позицию фона для мобильных устройств */
-        background-size: cover;
+        //background-size: cover;
         /* Фон адаптируется под размер экрана */
+
+        background-size: 256px 100px;
+        padding-top: 100px;
     }
 
     .form {
         padding: 15px;
-        max-width: 100%;
         /* Убираем максимальную ширину для мобильных устройств */
+    }
+
+    .mainBox {
+        max-width: none;
     }
 }
