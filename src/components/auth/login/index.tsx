@@ -16,4 +16,3 @@ const LoginPage: React.FC<IPropsLogin> = (props: IPropsLogin): JSX.Element => {
 };
 
 export default LoginPage;
-
