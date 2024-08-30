@@ -31,7 +31,7 @@ const VirtualCard: React.FC = () => {
         const fetchUserData = async () => {
             try {
                 const token = localStorage.getItem('token');
-                const response = await axios.get('http://localhost:8090/api/user/getUserInfo', {
+                const response = await axios.get('http://10.4.56.38:8090/api/user/getUserInfo', {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
@@ -40,7 +40,7 @@ const VirtualCard: React.FC = () => {
                 setIsAdmin(response.data.roles.includes('ROLE_ADMIN'));
                 setIsSuperAdmin(response.data.roles.includes('ROLE_SUPERADMIN'));
         
-                const responseForCard = await axios.get('http://localhost:8090/api/virtualCard/getVirtualCard', {
+                const responseForCard = await axios.get('http://10.4.56.38:8090/api/virtualCard/getVirtualCard', {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
@@ -66,7 +66,7 @@ const VirtualCard: React.FC = () => {
     const fetchCardData = async () => {
         try {
             const token = localStorage.getItem('token');
-            const responseForCard = await axios.get('http://localhost:8090/api/virtualCard/getVirtualCard', {
+            const responseForCard = await axios.get('http://10.4.56.38:8090/api/virtualCard/getVirtualCard', {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -86,7 +86,7 @@ const VirtualCard: React.FC = () => {
     const handleCreateCard = async () => {
         try {
             const token = localStorage.getItem('token');
-            await axios.post('http://localhost:8090/api/virtualCard/createVirtualCard', {}, {
+            await axios.post('http://10.4.56.38:8090/api/virtualCard/createVirtualCard', {}, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -121,7 +121,7 @@ const VirtualCard: React.FC = () => {
         try {
             const token = localStorage.getItem('token');
             const response = await axios.patch(
-                'http://localhost:8090/api/virtualCard/blockVirtualCard',
+                'http://10.4.56.38:8090/api/virtualCard/blockVirtualCard',
                 {
                     description: "Карта заморожена по запросу пользователя"
                 },
