@@ -1,5 +1,17 @@
 import React, { useState } from 'react';
-import { Button, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, TextField, Typography, Checkbox, Link } from '@mui/material';
+import {
+    Button,
+    FormControl,
+    FormControlLabel,
+    FormLabel,
+    Radio,
+    RadioGroup,
+    TextField,
+    Typography,
+    Checkbox,
+    Link,
+    Grid
+} from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { IPropsRegister } from '../../common/types/auth';
 
@@ -27,29 +39,39 @@ const RegisterPage: React.FC<IPropsRegister> = (props: IPropsRegister): JSX.Elem
             <TextField fullWidth={true} margin='normal' label="Имя" variant="outlined" placeholder='Введите ваше имя' onChange={(e) => setFirstName(e.target.value)} />
             <TextField fullWidth={true} margin='normal' label="Фамилия" variant="outlined" placeholder='Введите вашу фамилию' onChange={(e) => setLastName(e.target.value)} />
             <TextField fullWidth={true} margin='normal' label="Отчество" variant="outlined" placeholder='Введите ваше отчество' onChange={(e) => setPatronymic(e.target.value)} />
-            <TextField
-                id="date"
-                label="Дата рождения"
-                margin='normal'
-                type="date"
-                defaultValue="2003-05-24"
-                InputLabelProps={{
-                    shrink: true,
-                }}
-                onChange={(e) => setBirthDate(e.target.value)}
-            />
-            <FormControl sx={{ marginLeft: '350px' }}>
-                <FormLabel id="gender-label" >Пол</FormLabel>
-                <RadioGroup
-                    aria-labelledby="gender-label"
-                    defaultValue="Мужской"
-                    name="gender"
-                    onChange={(e) => setGender(e.target.value)}
-                >
-                    <FormControlLabel value="female" control={<Radio />} label="Женский" />
-                    <FormControlLabel value="male" control={<Radio />} label="Мужской" />
-                </RadioGroup>
-            </FormControl>
+            <Grid container columnSpacing={6}>
+                <Grid container item sm={6} direction="column" >
+                    <TextField
+                        id="date"
+                        label="Дата рождения"
+                        margin='normal'
+                        type="date"
+                        defaultValue="2003-05-24"
+                        InputLabelProps={{
+                            shrink: true,
+                        }}
+                        onChange={(e) => setBirthDate(e.target.value)}
+                    />
+                </Grid>
+                <Grid container item sm={6} direction="column" >
+                    <FormControl>
+                        <FormLabel id="gender-label" >Пол</FormLabel>
+                        <RadioGroup
+                            aria-labelledby="gender-label"
+                            defaultValue="Мужской"
+                            name="gender"
+                            onChange={(e) => setGender(e.target.value)}
+                        >
+                            <FormControlLabel value="female" control={<Radio />} label="Женский" />
+                            <FormControlLabel value="male" control={<Radio />} label="Мужской" />
+                        </RadioGroup>
+                    </FormControl>
+                </Grid>
+            </Grid>
+
+
+
+
             <TextField fullWidth={true} margin='normal' label="Username" variant="outlined" placeholder='Введите ваш Username' onChange={(e) => setUserName(e.target.value)} />
             <TextField fullWidth={true} margin='normal' label="Email" variant="outlined" placeholder='Введите ваш Email' onChange={(e) => setEmail(e.target.value)} />
             <TextField type='password' fullWidth={true} margin='normal' label="Пароль" variant="outlined" placeholder='Введите ваш пароль' onChange={(e) => setPassword(e.target.value)} />
