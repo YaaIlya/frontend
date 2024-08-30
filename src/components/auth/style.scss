@@ -7,8 +7,10 @@
     //width: 95;
     background-image: url("../../media/logo.svg");
     background-repeat: no-repeat;
-    background-position: 100% 80%;
+    
     background-size: 385px 150px;
+    background-position: right 20px bottom 6em;
+
 
     .incitingText {
         color: rgb(54, 54, 255);
@@ -39,7 +41,7 @@
 @media (max-width: 1400px) {
     .root {
         // Убрираем лого вверх, делаем верхний отступ контейнеру
-        background-position: top center;
+        background-position: top 20px center;
     }
 }
 
